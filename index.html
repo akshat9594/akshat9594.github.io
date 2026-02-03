@@ -36,13 +36,12 @@ body {
 
 h1 {
   font-size: 24px;
-  margin-bottom: 10px;
   color: #ff4d6d;
 }
 
 p {
   color: #555;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 .details {
@@ -82,10 +81,8 @@ button {
   right: 0;
 }
 
-.music {
-  margin-top: 18px;
-  background: #ffd166;
-  color: #333;
+.youtube {
+  margin-top: 25px;
 }
 </style>
 </head>
@@ -109,20 +106,28 @@ button {
     <button id="no">No 🙃</button>
   </div>
 
-  <button class="music" onclick="startMusic()">Play our song 🎶</button>
+  <div class="youtube">
+    <p style="font-size:14px;">Tap play 🎵</p>
+    <iframe
+      width="320"
+      height="180"
+      src="https://www.youtube.com/embed/8BiLurrzFRw"
+      title="Song"
+      frameborder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
-
-<audio id="bgMusic" src="song.mp3" loop></audio>
 
 <script>
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
-const music = document.getElementById("bgMusic");
 
 let scale = 1;
 
-// No button runs away + shrinks
-function moveAndShrinkNo() {
+// NO button runs away + shrinks
+function moveNo() {
   const card = document.querySelector(".card");
 
   scale -= 0.12;
@@ -139,14 +144,12 @@ function moveAndShrinkNo() {
   noBtn.style.transform = `scale(${scale})`;
 }
 
-noBtn.addEventListener("mouseover", moveAndShrinkNo);
-noBtn.addEventListener("touchstart", moveAndShrinkNo);
-noBtn.addEventListener("click", moveAndShrinkNo);
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+noBtn.addEventListener("click", moveNo);
 
-// Yes button
+// YES button success
 yesBtn.addEventListener("click", () => {
-  music.play();
-
   document.body.innerHTML = `
     <div style="
       height:100vh;
@@ -157,15 +160,10 @@ yesBtn.addEventListener("click", () => {
       font-family:'Segoe UI',sans-serif;
       text-align:center;
       color:#ff4d6d;">
-      <h1>It’s a date 💖<br>See you on 11-02-2026 😘</h1>
+      <h1>It’s a date 💖<br>11-02-2026 😘</h1>
     </div>
   `;
 });
-
-// Music manual start
-function startMusic() {
-  music.play();
-}
 </script>
 
 </body>
