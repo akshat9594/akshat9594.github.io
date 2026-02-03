@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Invite 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ff4d6d;
+}
+
+.details {
+  margin: 18px 0;
+  background: #fff5f7;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.details strong {
+  color: #ff4d6d;
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px 26px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="panda.jpg" alt="Cute panda">
+
+  <h1>Gimu, will you be my Valentine? 💖</h1>
+
+  <div class="details">
+    <p><strong>Date:</strong> 11-02-2026</p>
+    <p><strong>Place:</strong> To be decided 😉</p>
+  </div>
+
+  <p>I don’t know the place yet,<br>but I know I want it to be with you.</p>
+
+  <button onclick="playSong()">Play our song 🎶</button>
+</div>
+
+<iframe id="player" width="0" height="0" src="" allow="autoplay"></iframe>
+
+<script>
+function playSong() {
+  document.getElementById("player").src =
+    "https://www.youtube.com/embed/LV_wiOhO40Q?autoplay=1";
+}
+</script>
+
+</body>
+</html>
 
